@@ -141,81 +141,12 @@ window.Quarto = {
 </header>
 
 
-<!-- 
-Setting:
-break on single new line: False
-
-In config.js:
-{
-  katexConfig: {
-  "macros": {"\\RR": "\\mathbb{R}"}
-}
-
-
-In style.less:
-.markdown-preview.markdown-preview {
-  // modify your style here
-  // eg: background-color: blue;
-  font-size: 14px;
-}
- -->
-<!-- 
-For Markdown Extended: 
-https://www.mybyways.com/blog/customizing-vs-code-for-markdown-note-taking
- -->
 <div class="hidden">
 
 </div>
-<!-- $$
-\def\half#1{\frac{#1}{2}}$$ 
--->
-<!-- 
-$$
-\gdef\RR{\mathbb{R}}
-\gdef\CC{\mathbb{C}}
-\gdef\HH{\mathbb{H}}
-$$ 
--->
-<!-- $$\def\RR{\mathbb{R}}$$ -->
-<!-- $$
-\renewcommand{\vec}[1]{\mathbf{#1}}$$ 
--->
-<!-- 
-!!! quote quote
-!!! done done, success
-!!! info info, todo
-!!! tip tip, hint
-::: callout-note note
-!!! summary summary
-!!! question question
-!!! fail fail
-::: {.callout-warning} warning
-!!! danger danger
-!!! error error
- -->
-<!-- 
-:gem: gem
-
-:snowflake: snowflake
-
-:sparkles: sparkles
-
-:memo: memo
-
-:notes: notes
-
-:warning: warning
-
-:thinking: :cry: :sob: :hugs:  :key:
- -->
-<!-- Test: $\RR$ -->
-<!-- {% include file.md %} -->
-<!-- {{ include 'file.md' }} -->
-<!-- [[TOC]] -->
 <section id="表記" class="level3" data-number="0.1">
 <h3 data-number="0.1" class="anchored" data-anchor-id="表記"><span class="header-section-number">0.1</span> 表記</h3>
 <p><span class="math inline">\mathbb{R}</span>: 実数全体の集合</p>
-<!-- $\CC$: 複素数全体の集合 (complex numbers) -->
 <p><span class="math inline">\mathbb{R}^n</span>: <span class="math inline">n</span> 次元空間（正確には、実ユークリッド空間）</p>
 </section>
 <section id="ベクトル" class="level3" data-number="0.2">
@@ -236,7 +167,6 @@ $$
 </div>
 </div>
 <p>空間内において速度や力を考える際、その大きさのデータだけでは不便なことも多い。 そのようなときベクトルを使うと便利である。</p>
-<!-- $\pmb{x}, x, \bm{x}$ -->
 <p>具体的なベクトルは数の列で表すことができる：</p>
 <p>例：ベクトル <span class="math inline">\bm{v}=(1,2,3)</span>. <a href="fig/a_vector.html" target="_blank">（イメージ）</a></p>
 <p>これは３次元空間 <span class="math inline">\mathbb{R}^3</span>において、以下のベクトルを意味する。</p>
@@ -277,9 +207,6 @@ $$
 </span></p>
 </div>
 </div>
-<!--
-    $$\frac{\partial}{\partial x} = (1,0,0),\quad \frac{\partial}{\partial y} =(0,1,0),\quad \frac{\partial}{\partial z} =(0,0,1).$$
--->
 <p>これを使うと <span class="math inline">\bm{w}=(4,-5,6)</span> は <span class="math display">
 \bm{w} = 4\mathbf{i} -5\mathbf{j} +6\mathbf{k}
 </span> と表せる。</p>
@@ -563,8 +490,7 @@ x=\cos t, \quad y=\sin t, \quad 0\leq t \leq 2\pi
 <ul>
 <li><p><span class="math inline">\bm{r}: [0,1] \to \mathbb{R}^2,\quad t\mapsto (t, t^2)</span> としたとき、<br>
 <span class="math inline">C=\bm{r}([0,1])</span> は２次元空間内の放物線 <span class="math inline">y=x^2, (0\leq x\leq 1)</span> を表している。</p></li>
-<li><!-- [link](../fig/helix.html) -->
-<p><span class="math inline">\bm{r}: [0,6\pi] \to \mathbb{R}^3,\quad t\mapsto (\cos t, \sin t, t)</span> としたとき、<br>
+<li><p><span class="math inline">\bm{r}: [0,6\pi] \to \mathbb{R}^3,\quad t\mapsto (\cos t, \sin t, t)</span> としたとき、<br>
 <span class="math inline">C=\bm{r}([0,6\pi])</span> は３次元空間内の螺旋のような曲線を表している。 <a href="fig/helix.html" target="_blank">螺旋状曲線</a></p></li>
 <li><p><span class="math inline">\bm{r}: [0,1/2] \to \mathbb{R}^2,\quad t\mapsto (2t, 4t^2)</span> としたとき、<br>
 <span class="math inline">C=\bm{r}([0,1/2])</span> は２次元空間内の放物線 <span class="math inline">y=x^2, (0\leq x\leq 1)</span> を表している。</p></li>
@@ -572,35 +498,6 @@ x=\cos t, \quad y=\sin t, \quad 0\leq t \leq 2\pi
 <span class="math inline">C=\bm{r}([0,1])</span> は２次元空間内の放物線 <span class="math inline">y=x^2, (0\leq x\leq 1)</span> を表している。</p></li>
 </ul>
 <p>３番目と４番目は１番目と同じ曲線であり、つまり異なる関数 <span class="math inline">\bm{r}</span> が同じ曲線を表すことは起こる。</p>
-<!-- ![alt text](fig/spiral.png) -->
-<!-- ![Interactive Plot](fig/spiral.html) -->
-<!-- ![alt text](fig/spiral.svg) -->
-<!-- [螺旋曲線](/fig/spiral.html). -->
-<!-- 
-例：関数の表す曲線
-
-* 区間は $(-\infty, \infty)$、つまり $\RR$ 全体として $$\bm{r}: \RR \to \RR^2,\quad t \mapsto (t, 2t)$$ としたならば、これは直線 $y=2x$ を表す。
-
-         
-- 区間は $\RR$ 全体として
-$$\bm{r}: \RR \to \RR^2,\quad t \mapsto (t, t^2)$$
-としたならば、これは放物線 $y=x^2$ を表す。
-
-- 区間は $\RR$ 全体として
-$$\bm{r}: \RR \to \RR^2,\quad t \mapsto (2t, 4t^2)$$
-としたならば、これも放物線 $y=x^2$ を表す。（つまり、異なる関数が同じ曲線を表すこともある。）
- -->
-<!-- 
-::: {.callout-note} 
-３次元空間の曲線 同様に、関数 $\bm{r}: [a,b] \to \RR^3$ が与えられれば、３次元空間の曲線を表しているとみなすことができる。
-:::
- -->
-<!-- 
-##### 弧長（曲線の長さ）
-
-* 曲線がパラメータで表されているとき $f: \RR \to \RR^2,\quad t \mapsto (x(t), y(t))$
-* 曲線が方程式で表されているとき $F(x,y)=0$
- -->
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -619,20 +516,11 @@ $$\bm{r}: \RR \to \RR^2,\quad t \mapsto (2t, 4t^2)$$
 </div>
 <p>これ以降は、上の公式が曲線の長さ（弧長）になるような曲線のみを考える。</p>
 <p>その状況では <span class="math inline">t</span> が変化するにつれて点 <span class="math inline">\bm{r}(a)</span> から <span class="math inline">\bm{r}(t)</span> までの弧長は 常に（連続的に）変化してゆく。 したがって、<span class="math inline">t</span> の値とその弧長は１対１で対応しているので、 <span class="math inline">t</span> の代わりに弧長をパラメータとして曲線の位置が定まる。</p>
-<!-- 
-ここまで、曲線を表すパラメータとして $t$ を使ってきたが、特に $t$ に対し条件はなかった。
-しかし、パラメータの値が曲線の（ある基準点からの）長さに一致するようなものならば便利なことも多い。
- -->
 <p>そのようなパラメータを <span class="math inline">s</span> を使って表すことが多い。 そのとき、<span class="math inline">s</span> は <span class="math inline">t</span> の関数とみることができ、 上の公式より <span class="math display">
 s(t) = \int_a^t \sqrt{ x'(t)^2 + y'(t)^2+ z'(t)^2}\, dt
 </span> と書くことができる。上で述べた通り <span class="math inline">t</span> と <span class="math inline">s</span> は１対１で対応しているので、 何らかの関数 <span class="math inline">\phi</span> を使って <span class="math display">
 t = \phi(s)
 </span> と書ける（この関数は必ずしもきれいに求まらない）。 よって、 改めて点の位置を <span class="math inline">\bm{r}(\phi(s))</span> で表せば、 その点までの弧長が常に <span class="math inline">s</span> に一致し、便利なことも多い。</p>
-<!-- 
-$$
-s(t) = \int_0^t \sqrt{ x'(t)^2 + y'(t)^2+z'(t)^2}\, dt \Longrightarrow \frac{ds}{dt}=\sqrt{ x'(t)^2 + y'(t)^2+z'(t)^2}.
-$$
- -->
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -654,15 +542,6 @@ s= \int_0^t \sqrt{4\cos^2 t + 4\sin^2 t}\, dt = \int_0^t 2\,dt=2t \Longrightarro
 \bm{\rho}(s) = \bm{r}(s/2)=\left(2\cos\frac{s}{2}, 2\sin\frac{s}{2}\right).
 </span></p>
 <p>たしかに点 <span class="math inline">\bm{\rho}(0)</span> から点 <span class="math inline">\bm{\rho}(s)</span> までの弧長は常に <span class="math inline">s</span> になっている。</p>
-<!-- ---
-
-しかし、両辺を $t$ で微分することにより、
-$$
-\frac{ds}{dt}=\sqrt{ x'(t)^2 + y'(t)^2+z'(t)^2}=|\bm{r}'(t)|.
-$$
-という関係式は得られる。
-
---- -->
 <hr>
 <p>ここでの話は弧長をパラメータとして使うほうが、簡明なのでそれを用いる。</p>
 <section id="接線ベクトル法線ベクトル曲率捩率" class="level5">
@@ -682,19 +561,7 @@ $$
     </span></p>
 </div>
 </div>
-<!-- 
-::: callout-note 
-## 接線ベクトル、曲率 
-曲線上の点の位置を $\bm{r}(t)$ とする。その位置での単位接線ベクトル $\bm{T}(t)$、曲率 $\kappa(t)$ を定義する： 
-$$
-\bm{T}(t):=\frac{\bm{r}'(t)}{|\bm{r}'(t)|},\quad \kappa(t):=\left|\frac{\bm{T}'(t)}{\bm{r}'(t)}\right|
-$$
-:::
- -->
 <p>単位接線ベクトルは <span class="math inline">\bm{r}(s)</span> が描く曲線上の各点における接線の方向のベクトルになっている。（大きさは１で、向きは <span class="math inline">s</span> が増加するときに点が動く方向。）</p>
-<!-- 
-$\bm{T}'(s)\cdot \bm{T}(s) = (\bm{T}(s)\cdot \bm{T}(s))'/2 = 0$ より $\bm{T}'(s)$ と $\bm{T}(s)$ は垂直であることに注意すると、
- -->
 <p>曲率はおおまかに言って、各々の位置で、曲線を円で近似した時の円の半径の逆数となる。 つまり、曲率が大きいということはその円の半径は小さいということであり、 その位置での曲がり具合は大きくなる。</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -711,15 +578,6 @@ $\bm{T}'(s)\cdot \bm{T}(s) = (\bm{T}(s)\cdot \bm{T}(s))'/2 = 0$ より $\bm{T}'(
 </span></p>
 </div>
 </div>
-<!-- 
-::: callout-note 
-## 法線ベクトル、従法線ベクトル、捩率 
-$\bm{r}(t)$ とする。その位置での単位法線ベクトル $\bm{N}(t)$、従法線ベクトル $\bm{B}(t)$、捩率 $\tau(t)$ を定義する： 
-$$
-\bm{N}(t):=\frac{\bm{T}'(t)}{|\bm{T}'(t)|},\quad \bm{B}(t):= \bm{T}(t) \times \bm{N}(t),\quad \bm{\tau}(t):=-\bm{N}(t) \cdot \bm{B}'(t).
-$$
-:::
- -->
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -740,13 +598,6 @@ Frenet-Serret の公式
 </div>
 </div>
 <p>１つ目と２つ目は上の定義からすぐにわかる。 （２つ目を満たす <span class="math inline">\tau</span> を捩率の定義とすることも多い。） ３つ目は <span class="math inline">(\bm{T}, \bm{N}, \bm{B})</span> が右手系の正規直交基底を成すこと を使って微分の計算をすると言える。</p>
-<!-- 
-
-
-You can jump to [定理](#thm:arc-2d-1) for more information.
-
-
- -->
 </section>
 </section>
 <section id="曲面" class="level4">
@@ -765,28 +616,6 @@ You can jump to [定理](#thm:arc-2d-1) for more information.
 <p><span class="math inline">D=\{(u,v);\ 0\leq u&lt;2\pi,\ -1 \leq  v&lt;1 \}</span>,<br>
 <span class="math inline">\bm{r}(u,v)=((1 + v \cos(u/2)) \cos u,\ (1 + v \cos(u/2)) \sin u,\ v \sin (u/2))</span></p></li>
 </ul>
-<!-- 
-**曲面の面積**
-
-曲面 $S: f(D), D \subset \RR^2.$
-
-$$
-A = \int_S \, d\sigma
-= \int_S \sqrt{(dydz)^2+(dzdx)^2+(dxdy)^2}\\
-= \int_S \sqrt{\left(\frac{dz}{dx}\right)^2 + \left(\frac{dz}{dy}\right)^2+1}\, dxdy
-$$
-
-曲面に沿って（$x,y$のそれぞれ一方を固定して）点を動かしたときの移動する範囲の面積を$\Delta \sigma$とすると、 それは平行四辺形で近似できるので 
-$$
-\Delta \sigma \approx 
-|(0, \Delta y, \Delta z) \times (\Delta x, 0, \Delta z)|
-=|(\Delta y \Delta z, \Delta z \Delta x, -\Delta x \Delta y)|
-$$
- -->
-<!-- $\eqref{eq}$ -->
-<!-- $$x=y+1 \tag{1} \label{eq1}$$ -->
-<!-- $$y=z\label{eq1}$$ -->
-<!-- #### 座標系 (coordinate system) -->
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -805,11 +634,6 @@ $$
 </div>
 </div>
 <p>例：通常の座標（直交座標）における点 <span class="math inline">P=(\sin \frac{\pi}{3}\cos\frac{\pi}{6}, \sin \frac{\pi}{3}\sin\frac{\pi}{6}, \cos\frac{\pi}{3})=(\frac{3}{4}, \frac{\sqrt{3}}{4},\frac{1}{2})</span> は球面座標においては <span class="math inline">(1, \frac{\pi}{3}, \frac{\pi}{6})</span> と表せる。</p>
-<!-- 
-::: callout-note 
-## 定義：曲線座標
-:::
- -->
 </section>
 </section>
 <section id="微分積分" class="level3" data-number="0.4">
@@ -874,15 +698,12 @@ $$
 <p><span class="math inline">(x,y,z)</span> を <span class="math inline">\mathbb{R}^3</span>の直交座標系とする。</p>
 <p>スカラー場 <span class="math inline">{f}: \mathbb{R}^3 \to \mathbb{R}</span> にたいして次の関数を定義する：</p>
 <ul>
-<li><strong>勾配</strong> <span class="math inline">\operatorname{grad} f := \nabla f</span> <!-- f_x\, \mathbf{i} + f_y\, \mathbf{j} + f_z\, \mathbf{k} --></li>
+<li><strong>勾配</strong> <span class="math inline">\operatorname{grad} f := \nabla f</span> </li>
 </ul>
 <p>ベクトル場 <span class="math inline">\bm{F}: \mathbb{R}^3 \to \mathbb{R}^3</span> にたいして次の関数を定義する：</p>
-<!-- (x,y,z)\mapsto (A_x(x,y,z), A_y(x,y,z), A_z(x,y,z))$ にたいして次の関数を定義する： -->
 <ul>
-<li><p><strong>発散</strong> <span class="math inline">\operatorname{div} \bm{F} := \nabla \cdot \bm{F}</span> <!-- = (A_x)_x+ (A_y)_y + (A_z)_z$ --></p></li>
-<li><p><strong>回転</strong> <span class="math inline">\operatorname{rot} \bm{F} := \nabla \times \bm{F}</span> （または <span class="math inline">\operatorname{curl}\bm{F}</span> とも書く） <!--     
-= ((A_z)_y-(A_y)_z)\, \mathbf{i} + ((A_x)_z-(A_z)_x)\,\mathbf{j} + ((A_y)_x-(A_x)_y)\,\mathbf{k}
- --></p></li>
+<li><p><strong>発散</strong> <span class="math inline">\operatorname{div} \bm{F} := \nabla \cdot \bm{F}</span> </p></li>
+<li><p><strong>回転</strong> <span class="math inline">\operatorname{rot} \bm{F} := \nabla \times \bm{F}</span> （または <span class="math inline">\operatorname{curl}\bm{F}</span> とも書く） </p></li>
 </ul>
 </div>
 </div>
@@ -942,32 +763,6 @@ s = \int_a^t \sqrt{x'(t)^2+y'(t)^2+z'(t)^2}\, dt
   \end{align*}
 </span></p></li>
 </ul>
-<!--
-::: {.callout-caution} 
-## 注意 
-$s$ の定義を始点（$t$ の始点に対応する点）からの長さとすると、 $ds/dt$ は $C$ の向きに依存する。 $s$ の定義をあらかじめ固定された１点からの長さとすると、 $ds/dt$ は $C$ の向きに依存しないが、その点を境に符号が変わる。
-:::
--->
-<!-- 
-::: callout-note 
-## 定義：線積分
-    $f$ をスカラー場としたとき、曲線 $C=\bm{r}([a,b])$ に沿った線積分を次の右辺で定義する：
-    $$\int_C f\, ds := \int_a^b f(\bm{r}(t))\, \frac{ds}{dt}\, dt.$$
-    $$\int_C f\, |d\bm{r}| := \int_a^b f(\bm{r}(t))\, \left|\frac{d\bm{r}}{dt}\right|\, dt.$$
-    $\bm{F}$ をベクトル場としたとき、曲線 $C=\bm{r}([a,b])$ に沿った線積分を次の右辺で定義する：
-    $$\int_C \bm{F}\cdot d\bm{r} := \int_a^b \bm{F}(\bm{r}(t))\cdot \frac{d\bm{r}}{dt}\, dt.$$
-    （積分の中身は内積を取っている。）
-::: 
--->
-<!-- 
-スカラー場の線積分はパラメータ化の仕方によらないと説明されることが多いが、それは $t$ の動く向きによって $s$ も変わるからである。要するに、$t$ が大➝小の向きになると、$ds/dt$ の符号が負になる。（$s$ というものが、$t$ がどう変化しようが常に増えるように定義されている。そのせいで $ds$ は 1-form にならない。）
- -->
-<!-- 
-例：$\bm{r}(t)= (t, t)$ とする。
-* $t: 0\to 1$ と見るならば $s=\sqrt{2}t+c$ であり $ds/dt \geq 0$
-
-* $t: 1\to 0$ と見るならば $s=-\sqrt{2}t+c$ であり $ds/dt\leq 0$
- -->
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -991,7 +786,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><span class="math inline">f</span> を <span class="math inline">\mathbb{R}^3</span> におけるスカラー場 とし、<span class="math inline">D\subset \mathbb{R}^2</span> としたとき、 曲面 <span class="math inline">S=\bm{r}(D)\subset \mathbb{R}^3</span> に沿った面積分を次の左辺のように書き、その意味を右辺で定義する： <!-- $$\int_S f\, |d^2 \bm{r}| := \int_D f(\bm{r}(u, v))\, |\bm{T}_u \times \bm{T}_v|\, dudv.$$ --> <span class="math display">
+<p><span class="math inline">f</span> を <span class="math inline">\mathbb{R}^3</span> におけるスカラー場 とし、<span class="math inline">D\subset \mathbb{R}^2</span> としたとき、 曲面 <span class="math inline">S=\bm{r}(D)\subset \mathbb{R}^3</span> に沿った面積分を次の左辺のように書き、その意味を右辺で定義する： <span class="math display">
 \int_S f\, |d \bm{A}| := \int_D f(\bm{r}(u, v))\, |\bm{r}_u \times \bm{r}_v|\, dudv.
 </span></p>
 <p><span class="math inline">\bm{F}</span> を <span class="math inline">\mathbb{R}^3</span> におけるベクトル場 とし、<span class="math inline">D\subset \mathbb{R}^2</span> としたとき、 曲面 <span class="math inline">S=\bm{r}(D)\subset \mathbb{R}^3</span> に沿った面積分を次の左辺のように書き、その意味を右辺で定義する： <span class="math display">
@@ -999,44 +794,6 @@ Note
 </span> ここでは <span class="math inline">\bm{r}_u:=\frac{\partial \bm{r}}{\partial u}, \bm{r}_v:= \frac{\partial \bm{r}}{\partial v}</span> と定義する。</p>
 </div>
 </div>
-<!-- ================================================ -->
-<!-- 
-
-曲線 $C=f([t_0, t_1])$.
-
-$$
-L = \int_C \, ds
-= \int_C \sqrt{(dx)^2+(dy)^2}
-= \int_{t_0}^{t_1} \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2}\, dt
-% = \int_{t_0}^{t_1} \left|\frac{df}{dt}\right|\, dt
-$$
-
-注：曲線に沿って点を動かしたときの移動量を$\Delta s$ とすると、 $x,y$ のそれぞれの変化量を$\Delta x, \Delta y$ と書くならば、近似式 \$ \Delta s \approx \|(\Delta x, \Delta y)\| = \sqrt{(\Delta x)^2 +(\Delta y)^2} \$ が成り立つから。
-
-$C$ が3次元空間にある曲線の場合は
-
-$$
-L = \int_C \, ds
-= \int_C \sqrt{(dx)^2+(dy)^2+(dz)^2}
-= \int_{t_0}^{t_1} \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2 + \left(\frac{dz}{dt}\right)^2}\, dt
-% = \int_{t_0}^{t_1} \left|\frac{df}{dt}\right|\, dt
-$$
-
-**線積分**
-
-曲線 $C: f([t_0, t_1])$上のスカラー関数 $\phi: C\to\RR$
-
-$$
-\int_C \phi \, ds
-= \int_C \phi \sqrt{(dx)^2+(dy)^2}
-= \int_{t_0}^{t_1} \phi(x(t), y(t)) \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2}\, dt
-% = \int_{t_0}^{t_1} \left|\frac{df}{dt}\right|\, dt
-$$
-
-**面積分**
-
- -->
-<!-- ================================================ -->
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1049,30 +806,10 @@ $$
 <div class="callout-body-container callout-body">
 <p>曲面 <span class="math inline">S \subset \mathbb{R}^3</span> がある閉曲線 <span class="math inline">C</span> で囲まれているとする。このときベクトル場 <span class="math inline">\bm{F}</span> に対して <span class="math display">
     \int_S \operatorname{rot}\bm{F} \, \cdot d\bm{A} = \int_{C} \bm{F}\cdot d\bm{r}.
-</span> ただし、<span class="math inline">d\bm{A}</span> の指す方向から <span class="math inline">C</span> を見たとき半時計回りになるように右辺の線積分を取る。 <!-- 
-$\omega \in \Omega_1$
-$$
-\int_S\, d\omega = \int_{\partial S} \omega
-$$
- --></p>
+</span> ただし、<span class="math inline">d\bm{A}</span> の指す方向から <span class="math inline">C</span> を見たとき半時計回りになるように右辺の線積分を取る。 </p>
 </div>
 </div>
 <p>・・・</p>
-<!-- 
-例：例えば $\bm{r}=(x,y,z)$<!-- $x=x(u,v), y=y(u,v), z=z(u,v)$ 
-と書き、$\bm{F}(x,y,z) =(F_1(x,y,z), F_2(x,y,z), F_3(x,y,z))$ と書くならば 左辺は
-$$
-\int_S \left(\frac{\partial F_3}{\partial y} - \frac{\partial F_2}{\partial z} \right)\, dydz  +  \left(\frac{\partial F_1}{\partial z} - \frac{\partial F_3}{\partial x} \right)\, dzdx  +  \left(\frac{\partial F_2}{\partial x} - \frac{\partial F_1}{\partial y} \right)\, dxdy.
-$$ 
-右辺は 
-$$
-\int_{\partial S} F_1\,dx + F_2\,dy + F_3\,dz.
-$$
- -->
-<!-- 
-ベクトル場 $\bm{F}: \RR^3 \to \RR^3,\ (x,y,z)\mapsto (A_x(x,y,z), A_y(x,y,z), A_z(x,y,z))$ 
--->
-<!-- $(x,y,z)\mapsto (A_x(x,y,z), A_y(x,y,z), A_z(x,y,z))$ -->
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1085,12 +822,7 @@ $$
 <div class="callout-body-container callout-body">
 <p>立体領域 <span class="math inline">V \subset \mathbb{R}^3</span> が閉曲面 <span class="math inline">S</span> で囲まれているとする。このときベクトル場 <span class="math inline">\bm{F}: \mathbb{R}^3 \to \mathbb{R}^3</span> に対して <span class="math display">
 \iiint_{V} \operatorname{div}\bm{F}\, dxdydz= \int_{S} \bm{F}\cdot  d\bm{A}.
-</span> ただし、<span class="math inline">S</span> 上で <span class="math inline">d\bm{A}</span> の指す方向が <span class="math inline">V</span> の外向きになるように右辺の面積分を取る。 <!-- 
-$\omega \in \Omega_2$
-$$
-\int_V \,d \omega  = \int_{\partial V} \omega
-$$
- --></p>
+</span> ただし、<span class="math inline">S</span> 上で <span class="math inline">d\bm{A}</span> の指す方向が <span class="math inline">V</span> の外向きになるように右辺の面積分を取る。 </p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -1108,30 +840,11 @@ $$
 </span></p>
 </div>
 </div>
-<!-- 
-### 応用
-
-#### 数値計算
-
-#### Quaternions
-
-#### Optimization
- -->
 </section>
 </section>
 <section id="微分形式" class="level3" data-number="0.5">
 <h3 data-number="0.5" class="anchored" data-anchor-id="微分形式"><span class="header-section-number">0.5</span> 微分形式</h3>
 <p>・・・</p>
-<!-- 
-$$
-\begin{align*}
-&d^0: \Omega^0 \to \Omega^{1};\qquad f \mapsto df = \sum_i \frac{\partial f}{\partial x^i}\,dx^i \\
-% = f_x\,dx + f_y\,dy + f_z\,dz\\
-&d^1: \Omega^1 \to \Omega^{2}; \qquad f\,dx^i \mapsto df\wedge dx^i  \\
-&d^n: \Omega^n \to \Omega^{n+1}; \qquad f\,dx^{i_1} \wedge dx^{i_2}\wedge \cdots \wedge dx^{i_n} \mapsto  df \wedge dx^{i_1} \wedge dx^{i_2}\wedge \cdots \wedge dx^{i_n} \\
-\end{align*}
-$$
- -->
 </section>
 
 </main>
