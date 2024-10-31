@@ -34,7 +34,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="index_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 
   <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
@@ -104,7 +104,7 @@ window.Quarto = {
   </ul></li>
   <li><a href="#微分積分" id="toc-微分積分" class="nav-link" data-scroll-target="#微分積分"><span class="header-section-number">0.4</span> 微分積分</a>
   <ul>
-  <li><a href="#スカラー場ベクトル場-scalar-field-vector-field" id="toc-スカラー場ベクトル場-scalar-field-vector-field" class="nav-link" data-scroll-target="#スカラー場ベクトル場-scalar-field-vector-field">スカラー場・ベクトル場 (scalar field, vector field)</a></li>
+  <li><a href="#スカラー場ベクトル場" id="toc-スカラー場ベクトル場" class="nav-link" data-scroll-target="#スカラー場ベクトル場">スカラー場・ベクトル場</a></li>
   <li><a href="#スカラー場ベクトル場の微分" id="toc-スカラー場ベクトル場の微分" class="nav-link" data-scroll-target="#スカラー場ベクトル場の微分">スカラー場・ベクトル場の微分</a></li>
   <li><a href="#スカラー場ベクトル場の積分" id="toc-スカラー場ベクトル場の積分" class="nav-link" data-scroll-target="#スカラー場ベクトル場の積分">スカラー場・ベクトル場の積分</a></li>
   </ul></li>
@@ -527,21 +527,21 @@ t = \phi(s)
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="math inline">s</span> をパラメータとした表示
+弧長 <span class="math inline">s</span> をパラメータとした表示
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><span class="math inline">\bm{r}(t), a\leq t\leq b</span> によって曲線上の位置が表されているとし、 点 <span class="math inline">\bm{r}(a)</span> からの弧長が <span class="math inline">s</span> になるような曲線上の位置を <span class="math inline">\bm{\rho}(s)</span> とする。 このとき <span class="math inline">t=\phi(s)</span> と書けるならば <span class="math display">
-\bm{\rho}(s)=\bm{r}(\phi(s))
-</span> となる。</p>
+<p>曲線 <span class="math inline">C=\bm{r}([a,b])</span> 上の点がパラメータ <span class="math inline">t</span> によって <span class="math inline">\bm{r}(t)</span> と表されているとし、 <span class="math inline">s</span> を点 <span class="math inline">\bm{r}(a)</span> から <span class="math inline">\bm{r}(t)</span> までの弧長とする。 このとき <span class="math inline">t=\phi(s)</span> と書けば、 <span class="math display">
+\bm{\rho}(s):=\bm{r}(\phi(s))
+</span> は <span class="math inline">C</span> 上の点でかつ、<span class="math inline">\bm{r}(a)</span> からの弧長が <span class="math inline">s</span> となる。 つまり、関数 <span class="math inline">\bm{\rho}</span> を使って <span class="math inline">C=\bm{\rho}([0, l_C])</span> と書ける。 ただし、 <span class="math inline">l_C</span> は <span class="math inline">C</span> の全体の弧長とする。</p>
 </div>
 </div>
-<p>例：<span class="math inline">\bm{r}(t)=(2\cos t, 2\sin t)</span>, <span class="math inline">0\leq t &lt; 2\pi</span> ならば <span class="math display">
+<p>例：<span class="math inline">C=\bm{r}([0, 2\pi]), \bm{r}(t)=(2\cos t, 2\sin t)</span> ならば <span class="math display">
 s= \int_0^t \sqrt{4\cos^2 t + 4\sin^2 t}\, dt = \int_0^t 2\,dt=2t \Longrightarrow t=\frac{s}{2}
 </span> であり、よって <span class="math display">
 \bm{\rho}(s) = \bm{r}(s/2)=\left(2\cos\frac{s}{2}, 2\sin\frac{s}{2}\right).
 </span></p>
-<p>たしかに点 <span class="math inline">\bm{\rho}(0)</span> から点 <span class="math inline">\bm{\rho}(s)</span> までの弧長は常に <span class="math inline">s</span> になっている。</p>
+<p>たしかに点 <span class="math inline">\bm{\rho}(0)</span> から点 <span class="math inline">\bm{\rho}(s)</span> までの弧長は常に <span class="math inline">s</span> になっており、 また <span class="math inline">C=\bm{\rho}([0, 4\pi])</span> と書ける。</p>
 <hr>
 <p>ここでの話は弧長をパラメータとして使うほうが、簡明なのでそれを用いる。</p>
 <section id="接線ベクトル法線ベクトル曲率捩率" class="level5">
@@ -607,14 +607,15 @@ Frenet-Serret の公式
 <p>例：</p>
 <ul>
 <li><p>平面 (<span class="math inline">z=x+y</span>) の一部</p>
-<p><span class="math inline">D=\{(u,v);\ 0\leq u \leq 1,\ 0\leq v\leq1 \}</span>,<br>
+<p><span class="math inline">D=\{(u,v):\ 0\leq u \leq 1,\ 0\leq v\leq1 \}</span>,<br>
 <span class="math inline">\bm{r}(u,v)=(u, v, u+v)</span></p></li>
 <li><p>球面 (<span class="math inline">x^2+y^2+z^2=1</span>)</p>
-<p><span class="math inline">D=\{(u,v);\ 0\leq u&lt;\pi,\ 0\leq v&lt;2\pi\}</span>,<br>
+<p><span class="math inline">D=\{(u,v):\ 0\leq u&lt;\pi,\ 0\leq v&lt;2\pi\}</span>,<br>
 <span class="math inline">\bm{r}(u,v)=(\sin u \cos v,\ \sin u \sin v,\ \cos u)</span></p></li>
 <li><p><a href="fig/mobius_strip.html" target="_blank">メビウスの帯</a></p>
-<p><span class="math inline">D=\{(u,v);\ 0\leq u&lt;2\pi,\ -1 \leq  v&lt;1 \}</span>,<br>
-<span class="math inline">\bm{r}(u,v)=((1 + v \cos(u/2)) \cos u,\ (1 + v \cos(u/2)) \sin u,\ v \sin (u/2))</span></p></li>
+<p><span class="math inline">D=\{(u,v):\ 0\leq u&lt;2\pi,\ -1 \leq  v&lt;1 \}</span>,<br>
+<span class="math inline">\bm{r}(u,v)=((1 + v \cos(u/2)) \cos u,\ (1 + v \cos(u/2)) \sin u,\ v \sin (u/2))</span><br>
+（リンクのものは係数等が少し違う）</p></li>
 </ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -626,11 +627,13 @@ Frenet-Serret の公式
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><span class="math inline">\mathbb{R}^3</span> における点 <span class="math inline">P</span> の位置は通常の座標 <span class="math inline">(x,y,z)</span> を使って一意的に表すことができる。 一方で、以下の関係式を満たす <span class="math inline">(r, \theta, \phi)</span>を使ってもほぼ一意的に表すことができる。ただし、<span class="math inline">0&lt;r,\ 0\leq \theta&lt;\pi,\ 0\leq \phi &lt;2\pi</span> とする。 <span class="math display">\begin{align*}
+<p><span class="math inline">\mathbb{R}^3</span> における点 <span class="math inline">P</span> の位置は通常の座標 <span class="math inline">(x,y,z)</span> を使って一意的に表すことができる。 一方で、以下の関係式を満たす <span class="math inline">(r, \theta, \phi)</span>を使ってもほぼ一意的に表すことができる。ただし、<span class="math inline">0&lt;r,\ 0\leq \theta&lt;\pi,\ 0\leq \phi &lt;2\pi</span> とする。 <span class="math display">
+\begin{align*}
     x &amp;= r\sin \theta \cos \phi\\
-    y &amp;= r\sin\theta \sin \phi \\\
+    y &amp;= r\sin\theta \sin \phi \\
     z &amp;= r\cos \theta
-    \end{align*}</span> この座標 <span class="math inline">(r, \theta, \phi)</span> を球面座標と呼ぶ。</p>
+\end{align*}
+</span> この座標 <span class="math inline">(r, \theta, \phi)</span> を球面座標と呼ぶ。</p>
 </div>
 </div>
 <p>例：通常の座標（直交座標）における点 <span class="math inline">P=(\sin \frac{\pi}{3}\cos\frac{\pi}{6}, \sin \frac{\pi}{3}\sin\frac{\pi}{6}, \cos\frac{\pi}{3})=(\frac{3}{4}, \frac{\sqrt{3}}{4},\frac{1}{2})</span> は球面座標においては <span class="math inline">(1, \frac{\pi}{3}, \frac{\pi}{6})</span> と表せる。</p>
@@ -639,8 +642,8 @@ Frenet-Serret の公式
 <section id="微分積分" class="level3" data-number="0.4">
 <h3 data-number="0.4" class="anchored" data-anchor-id="微分積分"><span class="header-section-number">0.4</span> 微分積分</h3>
 <p>端的に言って、スカラー場は位置を入力すると、何らかの値（スカラー） を返す関数であり、 ベクトル場は位置を入力すると、何らかのベクトルを返す関数である。 ただし、まったくの無秩序なものを返す関数は想定しておらず、 ある種の自然な性質持った関数を想定している。 （例えば位置が近ければ返ってくるものも近いような性質） そのような状況では微分や積分が展開できると便利である。</p>
-<section id="スカラー場ベクトル場-scalar-field-vector-field" class="level4">
-<h4 class="anchored" data-anchor-id="スカラー場ベクトル場-scalar-field-vector-field">スカラー場・ベクトル場 (scalar field, vector field)</h4>
+<section id="スカラー場ベクトル場" class="level4">
+<h4 class="anchored" data-anchor-id="スカラー場ベクトル場">スカラー場・ベクトル場</h4>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -652,7 +655,8 @@ Frenet-Serret の公式
 </div>
 <div class="callout-body-container callout-body">
 <p><strong>スカラー場</strong>：<span class="math inline">\mathbb{R}^m \to \mathbb{R}</span> の関数のこと<br>
-<strong>ベクトル場</strong>：<span class="math inline">\mathbb{R}^m \to \mathbb{R}^n</span> の関数のこと<br>
+<strong>ベクトル場</strong>：<span class="math inline">\mathbb{R}^m \to \mathbb{R}^m</span> の関数のこと<br>
+（このノートでは <span class="math inline">m=2 \mathop{\text{or}}3</span> である。）<br>
 （空間内の点を入力したら、その位置での温度（スカラー）や力（ベクトル）を出力する関数というイメージ。）</p>
 </div>
 </div>
@@ -742,11 +746,13 @@ s = \int_a^t \sqrt{x'(t)^2+y'(t)^2+z'(t)^2}\, dt
 <p>例：</p>
 <ul>
 <li><p><span class="math inline">\bm{r}(t)=(x(t), y(t)), x(t)=\cos t, y(t)=\sin t, C=\bm{r}([0, \pi]), f=1</span> とすると <span class="math display">
-\bm{r}'(t)=(x'(t), y'(t))=(-\sin t, \cos t).</span> <span class="math display">
+\bm{r}'(t)=(x'(t), y'(t))=(-\sin t, \cos t).
+</span> <span class="math display">
 \int_0^{\pi} f(\bm{r}(t))\, |\bm{r}'(t)|\,dt = \int_0^{\pi} \sqrt{x'(t)^2+y'(t)^2}\,dt = \pi.
 </span></p></li>
 <li><p><span class="math inline">\bm{r}(t)=(x(t), y(t)), x(t)=\cos (\pi-t), y(t)=\sin (\pi-t), C=\bm{r}([0, \pi]), f=1</span> とすると <span class="math display">
-\bm{r}'(t)=(x'(t), y'(t))=(\sin (\pi-t), -\cos (\pi-t)).</span> <span class="math display">
+\bm{r}'(t)=(x'(t), y'(t))=(\sin (\pi-t), -\cos (\pi-t)).
+</span> <span class="math display">
   \int_0^{\pi} f(\bm{r}(t))\, |\bm{r}'(t)|\,dt = \int_0^{\pi} \sqrt{x'(t)^2+y'(t)^2}\,dt = \pi.
 </span></p></li>
 </ul>
@@ -791,9 +797,30 @@ Note
 </span></p>
 <p><span class="math inline">\bm{F}</span> を <span class="math inline">\mathbb{R}^3</span> におけるベクトル場 とし、<span class="math inline">D\subset \mathbb{R}^2</span> としたとき、 曲面 <span class="math inline">S=\bm{r}(D)\subset \mathbb{R}^3</span> に沿った面積分を次の左辺のように書き、その意味を右辺で定義する： <span class="math display">
 \int_S \bm{F}\cdot d \bm{A} := \int_D \bm{F}(\bm{r}(u, v))\, \cdot (\bm{r}_u \times \bm{r}_v)\, dudv.
-</span> ここでは <span class="math inline">\bm{r}_u:=\frac{\partial \bm{r}}{\partial u}, \bm{r}_v:= \frac{\partial \bm{r}}{\partial v}</span> と定義する。</p>
+</span> ここでは関数 <span class="math inline">\bm{r}</span> おける変数を <span class="math inline">u,v</span> とし、 <span class="math inline">\bm{r}_u:=\frac{\partial \bm{r}}{\partial u}, \bm{r}_v:= \frac{\partial \bm{r}}{\partial v}</span> とする。</p>
 </div>
 </div>
+<p>例：</p>
+<ul>
+<li><p><span class="math inline">\bm{r}(u,v)=(u, v, u+2v),</span></p>
+<p><span class="math inline">D=\{(u,v):\ 0\leq u\leq 1, 0\leq  v\leq 1\}, S=\bm{r}(D), f=1</span> とすると <span class="math display">
+\bm{r}_u(u,v)=(1, 0, 1), \bm{r}_v(u,v)=(0, 1, 2),
+</span> <span class="math display">
+\int_S f\, |d\bm{A}| = \int_D |(1,0,1)\times (0,1,2)|\,dudv
+= \int_D |(1,-2,1)|\,dudv =\cdots= \sqrt{6}.
+</span></p></li>
+<li><p><span class="math inline">\bm{r}(\theta, \phi)=(\sin \theta \cos \phi, \sin\theta \sin \phi, \cos \theta),</span></p>
+<p><span class="math inline">D=\{(\theta,\phi):\ 0\leq \theta\leq \pi/2, 0\leq  \phi\leq 2\pi\}, S=\bm{r}(D), f=1</span> とすると <span class="math display">
+\bm{r}_{\theta}(\theta,\phi)=(\sin\theta \cos\phi, \sin\theta \sin\phi, \cos\theta), \\
+\bm{r}_{\phi}(\theta,\phi)=(-\sin\theta\sin\phi, \sin\theta \cos\phi, 0),
+</span> <span class="math display">
+\bm{r}_{\theta} \times \bm{r}_{\phi}
+=(\sin^2\theta \cos\phi, \sin^2\theta \sin\phi, \sin\theta \cos\theta),
+</span> <span class="math display">
+\int_S f\, |d\bm{A}| = \int_D |\bm{r}_{\theta} \times \bm{r}_{\phi}|\,d\theta d\phi
+= \int_D |\sin \theta| \,d\theta d\phi = \cdots = 2\pi.
+</span> （<span class="math inline">S</span> は半径１の球面の半分にあたる曲面であり <span class="math inline">f=1</span> なので、この積分はその曲面の面積に相当する。）</p></li>
+</ul>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
